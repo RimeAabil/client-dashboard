@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #f3f7fd;
+  --bg-gradient: linear-gradient(180deg, #f6f9ff 0%, #eef4fd 100%);
+  --surface: #ffffff;
+  --text: #5b6472;
+  --text-h: #1e2a3a;
+  --border: #e6edf7;
+
+  --blue-50: #eef5ff;
+  --blue-100: #dbe9ff;
+  --blue-300: #90b8fb;
+  --blue-500: #4f83f5;
+  --blue-600: #3f6fe0;
+  --blue-gradient: linear-gradient(135deg, #6ea8fe 0%, #4f7df3 100%);
+
+  --green-bg: #e5f8ee;
+  --green-text: #1f9d63;
+  --amber-bg: #fef3dd;
+  --amber-text: #b9790f;
+
+  --shadow-sm: 0 2px 8px rgba(79, 125, 243, 0.08);
+  --shadow-md: 0 8px 24px rgba(79, 125, 243, 0.12);
+  --shadow-lg: 0 16px 40px rgba(79, 125, 243, 0.16);
+
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-pill: 999px;
+
+  --sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: 'Quicksand', var(--sans);
+
+  font: 16px/1.55 var(--sans);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-gradient);
+  min-height: 100svh;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+h1, h2, h3 {
+  font-family: var(--heading);
+  color: var(--text-h);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+::selection {
+  background: var(--blue-100);
+}
+
+/* Gentle scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--blue-100);
+  border-radius: var(--radius-pill);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}

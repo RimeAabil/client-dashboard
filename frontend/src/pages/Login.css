@@ -1,0 +1,125 @@
+@keyframes loginPopIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.login-page {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 40px 36px;
+  text-align: center;
+  animation: loginPopIn 0.45s ease both;
+}
+
+.login-badge {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 20px;
+  border-radius: var(--radius-pill);
+  background: var(--blue-gradient);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: 18px;
+  box-shadow: 0 8px 18px rgba(79, 125, 243, 0.32);
+}
+
+.login-card h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.login-subtitle {
+  color: var(--text);
+  font-size: 14.5px;
+  margin-bottom: 28px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.login-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.login-form input {
+  padding: 13px 18px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-pill);
+  font-size: 14.5px;
+  font-family: var(--sans);
+  color: var(--text-h);
+  background: var(--blue-50);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.login-form input::placeholder {
+  color: #93a0b4;
+}
+
+.login-form input:hover {
+  background: #fff;
+  border-color: var(--blue-100);
+}
+
+.login-form input:focus {
+  outline: none;
+  background: #fff;
+  border-color: var(--blue-300);
+  box-shadow: 0 0 0 4px var(--blue-100);
+}
+
+.login-error {
+  margin: -4px 0 0;
+  font-size: 13px;
+  color: #d64545;
+  font-weight: 500;
+}
+
+.login-btn {
+  width: 100%;
+  margin-top: 6px;
+  padding: 13px 0;
+}
+
+.login-footnote {
+  margin-top: 22px;
+  font-size: 12.5px;
+  color: #9aa5b5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .login-card {
+    animation: none;
+  }
+}
