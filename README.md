@@ -78,7 +78,6 @@ In a separate terminal:
 ```bash
 cd frontend
 npm install
-cp .env.example .env   # points the frontend at the backend URL
 npm run dev
 ```
 
