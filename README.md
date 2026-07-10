@@ -36,6 +36,27 @@ A minimal full-stack internal dashboard for tracking client requests, built as a
 
 Frontend and backend are fully decoupled, they only communicate over HTTP through the `/requests` REST API, and the frontend's API base URL is environment-configurable (`VITE_API_URL`), so either side can be deployed or swapped independently.
 
+## Workflow diagram
+
+![Simple workflow diagram](assets/workflow_diagram.png)
+
+**1.User logs in.**
+The login screen doesn't actually check anything against a database, type any email and password, hit "Log In," and the app just flips a switch in memory (`isLoggedIn = true`) and shows you the dashboard. It's a placeholder, not real security.
+
+**2. The dashboard asks the backend for data.**
+The moment the dashboard appears, the frontend sends a request to the backend: "give me all the requests." The backend asks the SQLite database for every row in the `requests` table, sends them back as JSON, and the frontend puts them in the table you see.
+
+**3. Adding a request.**
+When the fills in the form and hits "Add," the frontend sends that data to the backend, which inserts a new row into the database. Right after that, the frontend asks the backend for the full list *again*, so the table refreshes and shows your new entry.
+
+**4. Updating a status.**
+Clicking "Next Status" does two separate things, one after another: first it tells the backend "change this request's status," and the backend updates that row in the database. Then , as a second, separate step , the frontend asks for the whole list again so the table shows the new status.
+
+**5. Logging out.**
+Just flips that same switch back (`isLoggedIn = false`), which sends you back to the login screen. Nothing is sent to the backend.
+
+The one thing worth really understanding, steps 3 and 4 are always **two requests, not one** , "do the thing" and then "go fetch everything again to see the result." That gap between the two requests is where timing problems can creep in.
+
 ## Setup instructions
 
 ### 1. Backend
