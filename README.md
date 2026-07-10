@@ -34,7 +34,7 @@ A minimal full-stack internal dashboard for tracking client requests, built as a
             └── api.js          # Centralized Axios instance
 ```
 
-Frontend and backend are fully decoupled — they only communicate over HTTP through the `/requests` REST API, and the frontend's API base URL is environment-configurable (`VITE_API_URL`), so either side can be deployed or swapped independently.
+Frontend and backend are fully decoupled, they only communicate over HTTP through the `/requests` REST API, and the frontend's API base URL is environment-configurable (`VITE_API_URL`), so either side can be deployed or swapped independently.
 
 ## Setup instructions
 
@@ -46,7 +46,7 @@ npm install
 npm start
 ```
 
-Runs on `http://localhost:5000`. On first run it creates `database.db` (SQLite file) and a `requests` table automatically — no manual DB setup needed.
+Runs on `http://localhost:5000`. On first run it creates `database.db` (SQLite file) and a `requests` table automatically , no manual DB setup needed.
 
 Quick check: open `http://localhost:5000` — you should see `{"message": "Backend is working"}`.
 
@@ -89,7 +89,7 @@ Status flows: `New → In Progress → Done`. The "Next Status" button on the da
 
 ## Frontend flow
 
-1. `App.jsx` holds a simple `isLoggedIn` boolean and renders `Login` or `Dashboard` accordingly — this is intentionally a mock, not real auth.
+1. `App.jsx` holds a simple `isLoggedIn` boolean and renders `Login` or `Dashboard` accordingly ; this is intentionally a mock, not real auth.
 2. `Dashboard.jsx` fetches all requests on mount (`GET /requests`) and passes them down to `RequestsTable`.
 3. `CreateRequestForm` posts new requests, then calls `refresh()` to re-fetch the list.
 4. `RequestsTable`'s "Next Status" button calls `PUT /requests/:id`, then also calls `refresh()`.
