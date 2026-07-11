@@ -9,9 +9,6 @@ A minimal full-stack internal dashboard for tracking client requests, built as a
   <img src="https://img.shields.io/badge/API-REST-FF6C37?style=for-the-badge&logo=postman&logoColor=white" alt="REST API" />
   <img src="https://img.shields.io/badge/HTTP-Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white" alt="Axios" />
 </p>
-- **Frontend:** React (Vite)
-- **Backend:** Node.js / Express
-- **Database:** SQLite
 
 ## Project structure
 
